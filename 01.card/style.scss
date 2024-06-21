@@ -1,0 +1,111 @@
+@import "./reset.scss";
+
+body {
+  background-color: #dce6d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.phone {
+  height: 95vh;
+  width: 420px;
+  border-radius: 15px;
+  background-color: black;
+
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  overflow: auto;
+  .header__list {
+    color: white;
+    display: flex;
+    gap: 10px;
+    width: max-content;
+  }
+
+  .header__list-item {
+    border: 1px solid rgba($color: white, $alpha: 0.5);
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .header__list-item--inverted {
+    background-color: white;
+    color: black;
+  }
+}
+
+.cards {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  .cards__card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+
+    &:nth-child(1) {
+      background-color: #292d33;
+      border: 1px solid white;
+
+      .card__title {
+        color: white;
+      }
+    }
+
+    &:nth-child(2) {
+      background-color: #f5f2ee;
+    }
+
+    &:nth-child(3) {
+      background-color: #f9fbb2;
+    }
+    &:nth-child(4) {
+      background-color: #b09bf6;
+    }
+    &:nth-child(5) {
+      background-color: #ffd0d0;
+    }
+    &:nth-child(6) {
+      background-color: #cffcde;
+    }
+
+    &:nth-child(3n) {
+      grid-column: span 2;
+    }
+
+    .card__title {
+      font-size: 28px;
+    }
+
+    .card__footer {
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        border: 1px solid black;
+        padding: 5px 8px;
+        border-radius: 15px;
+      }
+
+      .footer__price {
+        background-color: #ffdd2d;
+      }
+
+      .footer__length {
+        background-color: white;
+      }
+    }
+  }
+}
