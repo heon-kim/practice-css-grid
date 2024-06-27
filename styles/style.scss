@@ -1,64 +1,55 @@
 @import "./reset.scss";
 
-%box {
-  background-color: #f04013;
-  padding: 0 10px;
-  display: flex;
-  flex-direction: column;
-  .content__main-text {
-    font-size: 140px;
-    font-weight: 700;
-  }
-}
-
 body {
-  background-color: skyblue;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.paper {
-  width: 500px;
-  height: 750px;
-  background-color: white;
-  border: 10px solid white;
+
+.wrapper {
+  height: 100%;
   display: grid;
-  grid-template-rows: 1fr 8fr;
-  gap: 10px;
-  .header {
-    background-color: black;
-    color: white;
-    font-size: 12px;
-    padding: 0 10px;
-    padding-top: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  text-align: center;
+  .main-grid {
+    font-size: 100px;
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr;
-  }
-  .content {
-    display: grid;
-    grid-template-rows: 1.2fr 1fr;
-    gap: 10px;
-
-    .content__row1 {
-      display: grid;
-      grid-template-columns: 1fr 0.5fr;
-      gap: 10px;
-      & > div {
-        @extend %box;
-
-        justify-content: flex-end;
-      }
+    grid-template-rows: repeat(3, 1fr);
+    &:first-child {
+      background-color: #d9e8de;
+      color: #f44608;
     }
-    .content__row2 {
-      @extend %box;
-      gap: 40px;
-      .content__sub-text {
-        color: white;
-        font-size: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
+    &:nth-child(2) {
+      background-color: #008a69;
+      color: #d9e8de;
+    }
+    &:nth-child(3) {
+      background-color: #f44608;
+      color: #d9e8de;
+    }
+    &:last-child {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      .small-grid {
+        font-size: 44px;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        &:first-child {
+          background-color: #f7abc4;
+          color: #f44608;
+        }
+        &:nth-child(2) {
+          background-color: #5f5fa9;
+          color: #d9e8de;
+        }
+        &:nth-child(3) {
+          background-color: #ffc027;
+          color: #f44608;
+        }
+        &:last-child {
+          background-color: #f87375;
+          color: #d9e8de;
+        }
       }
     }
   }
