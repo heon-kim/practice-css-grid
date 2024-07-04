@@ -2,4 +2,60 @@
 
 body {
   height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3px;
+  .header__filter {
+    height: 40px;
+    background-color: white;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3px;
+  .grid__poster {
+    height: 300px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .grid__header {
+      display: flex;
+      justify-content: space-between;
+      span:nth-child(2) {
+        text-transform: uppercase;
+      }
+    }
+    .grid__img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 70%;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+    .grid__footer {
+      display: flex;
+      justify-content: space-between;
+      span:nth-child(2) {
+        text-decoration: underline;
+      }
+    }
+  }
 }
