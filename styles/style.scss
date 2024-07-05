@@ -2,4 +2,140 @@
 
 body {
   height: 100vh;
+  display: grid;
+  grid-template-columns: 10fr 70px 6fr;
+  background-color: #ff7400;
+}
+
+.main {
+  background-color: #ff2d00;
+  display: grid;
+  gap: 2px;
+  grid-template-rows: 1fr repeat(6, 10fr);
+  margin: 0 10px 10px 10px;
+  border: 2px solid #ff2d00;
+  border-top: none;
+
+  .main__content {
+    display: grid;
+    grid-template-columns: 1fr 10fr 4fr;
+    gap: 2px;
+
+    &:not(:first-child) {
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    div {
+      color: #ff2d00;
+      background-color: #ff7400;
+    }
+
+    .main__subject {
+      grid-row: span 2;
+      display: flex;
+      span {
+        place-self: center;
+        display: block;
+        width: max-content;
+        transform: rotateZ(-90deg);
+      }
+    }
+    .main__title {
+      grid-row: span 2;
+      font-size: 74px;
+      font-weight: 600;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .main__category,
+    .main__period {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .main__period {
+      span {
+        background-color: #ff2d00;
+        color: #ff7400;
+        border-radius: 20px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 0;
+      }
+    }
+
+    &.main__content--active {
+      div {
+        color: white;
+        border: 1px solid white;
+      }
+      .main__period {
+        span {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+.bar {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    div {
+      position: absolute;
+      width: max-content;
+      font-size: 22px;
+    }
+  }
+
+  .bar__top {
+    background-color: #ff50fc;
+    div {
+      top: 90px;
+      transform: rotateZ(90deg);
+    }
+  }
+  .bar__bottom {
+    background-color: #1843fd;
+    div {
+      bottom: 90px;
+      transform: rotateZ(-90deg);
+    }
+  }
+}
+
+.aside {
+  background-color: #ff2d00;
+  display: grid;
+  grid-template-rows: 1fr 15fr;
+  padding: 10px 10px 0 10px;
+  .aside__header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+  }
+  .aside__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    .aside__post {
+      border-top: 2px solid black;
+      padding-top: 20px;
+      .aside__title {
+        font-size: 24px;
+      }
+      .aside__desc {
+        font-size: 14px;
+      }
+    }
+  }
 }
